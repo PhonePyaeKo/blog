@@ -1,15 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/articles', function () {
-    return "Article List";
-});
+Route::get('/articles', [ArticleController::class, "index"]);
 
-Route::get('/articles/detail/{id}', function ($id) {
-    return "Article Detail $id";
-});
+Route::get('/articles/detail/{id}', [ArticleController::class, "detail"]);
