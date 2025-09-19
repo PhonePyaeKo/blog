@@ -10,3 +10,6 @@ Route::get('/', function () {
 Route::get('/articles', [ArticleController::class, "index"]);
 
 Route::get('/articles/detail/{id}', [ArticleController::class, "detail"]);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
