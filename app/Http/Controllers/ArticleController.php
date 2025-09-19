@@ -18,6 +18,10 @@ class ArticleController extends Controller
 
     public function detail($id)
     {
-        return "Controller Detail $id";
+        $article = Article::find($id);
+
+        return view("articles.detail", [
+            'article' => $article,
+        ]);
     }
 }

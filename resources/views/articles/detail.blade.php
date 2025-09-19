@@ -2,17 +2,16 @@
 
 @section("content")
     <div class="container" style="max-width: 800px">
-        @foreach ($articles as $article)
-        <div class="card mb-2">
+        <div class="card mb-2 border-primary">
             <div class="card-body">
                 <h4 class="card-title">{{ $article['title'] }}</h4>
                 <div class="text-muted"> 
                     {{$article->created_at->diffForHumans()}} 
                 </div>
                 <p> {{$article['body']}} </p>
-                <a href=" {{url("/articles/detail/$article->id")}} " class="card-link">View Detail</a>
+                <a href=" {{url("/articles/delete/$article->id")}} " class="btn btn-outline-danger">Delete</a>
             </div>
         </div>
-        @endforeach
     </div>
 @endsection
+
