@@ -30,12 +30,14 @@
             @endforeach
         </ul>
 
-        <form action="{{ url("comments/add") }}" method="post">
-            @csrf
-            <input type="hidden" name="article_id" value= "{{$article->id}}">
-            <textarea name="content" class="form-control my-2"></textarea>
-            <button class="btn btn-secondary">Add Comment</button>
-        </form>
+        @auth
+            <form action="{{ url("comments/add") }}" method="post">
+                @csrf
+                <input type="hidden" name="article_id" value= "{{$article->id}}">
+                <textarea name="content" class="form-control my-2"></textarea>
+                <button class="btn btn-secondary">Add Comment</button>
+            </form>
+        @endauth
     </div>
 @endsection
 
