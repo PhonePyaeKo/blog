@@ -16,6 +16,14 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\Article::factory(20)->create();
         \App\Models\Comment::factory(40)->create();
+        \App\Models\User::factory()->create([
+            'name' => 'Mg Mg',
+            'email' => 'mgmg@gmail.com',
+        ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Ko Ko',
+            'email' => 'koko@gmail.com',
+        ]);
 
         $list = ['News', 'Tech', 'Web', 'App', 'Oss'];
         foreach($list as $name) {
