@@ -23,7 +23,7 @@
                     </option>
                 @endforeach
             </select>
-            <button class="btn btn-sm btn-secondary">Update Article</button>
+            <button class="btn btn-sm btn-success">Update Article</button>
         </form>
     </div>
 @endsection
